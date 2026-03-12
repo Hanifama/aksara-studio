@@ -1,0 +1,899 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Favicon -->
+    <link rel="icon" type="image/png" href="/assets/icon.jpg">
+
+    <!-- Primary SEO -->
+    <title>Aksara Studio | Studio Fotografi Profesional di Jatinangor</title>
+    <meta name="description" content="Aksara Studio adalah studio fotografi profesional di Jatinangor yang melayani foto prewedding, wisuda, keluarga, portrait, dan fotografi produk dengan hasil elegan dan berkualitas.">
+    <meta name="keywords" content="studio foto jatinangor, fotografi jatinangor, foto wisuda jatinangor, prewedding jatinangor, studio foto sumedang, jasa fotografi jatinangor">
+    <meta name="author" content="Aksara Studio">
+
+    <!-- Open Graph (SEO + Share ke WhatsApp / Instagram / Facebook) -->
+    <meta property="og:title" content="Aksara Studio | Studio Fotografi Profesional di Jatinangor">
+    <meta property="og:description" content="Mengabadikan momen berharga dengan fotografi elegan dan profesional di Jatinangor.">
+    <meta property="og:image" content="/assets/og-image.jpg">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Preview -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Aksara Studio | Studio Fotografi Profesional di Jatinangor">
+    <meta name="twitter:description" content="Studio fotografi profesional untuk prewedding, wisuda, keluarga, dan portrait.">
+    <meta name="twitter:image" content="/assets/og-image.jpg">
+
+    <!-- Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;600;700&family=Lato:wght@300;400;700&display=swap" rel="stylesheet">
+    
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <!-- Swiper JS -->
+    <link
+    rel="stylesheet"
+    href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+    />
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+    <!-- Tailwind Config -->
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            dark: '#1c1917', // Stone 900
+                            light: '#f5f5f4', // Stone 100
+                            accent: '#d97706', // Amber 600
+                            gold: '#b45309', // Amber 700
+                        }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Lato"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+
+    <style>
+        /* Custom Styles for things Tailwind handles differently */
+        .hero-bg {
+            background-image: linear-gradient(rgba(0, 0, 0, 0.4), rgba(0, 0, 0, 0.4)), url('https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?ixlib=rb-1.2.1&auto=format&fit=crop&w=1950&q=80');
+            background-size: cover;
+            background-position: center;
+            background-attachment: fixed;
+        }
+        
+        .gallery-item {
+            transition: transform 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: scale(1.02);
+        }
+    </style>
+</head>
+<body class="font-sans text-stone-600 bg-stone-50 antialiased">
+
+    <!-- Navigation -->
+    <nav class="fixed w-full z-50 bg-stone-50/90 backdrop-blur-md border-b border-stone-200 transition-all duration-300">
+        <div class="container mx-auto px-6 py-4">
+            <div class="flex justify-between items-center">
+                <a href="#" class="font-serif text-2xl font-bold text-brand-dark tracking-widest">AKSARA STUDIO</a>
+                
+                <!-- Desktop Menu -->
+                <div class="hidden md:flex space-x-8 text-sm uppercase tracking-wider font-semibold text-stone-800">
+                    <a href="#about" class="hover:text-brand-accent transition">About</a>
+                    <a href="#services" class="hover:text-brand-accent transition">Services</a>
+                    <a href="#portfolio" class="hover:text-brand-accent transition">Portfolio</a>
+                    <a href="#reviews" class="hover:text-brand-accent transition">Reviews</a>
+                    <a href="#contact" class="hover:text-brand-accent transition">Contact</a>
+                </div>
+
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-btn" class="md:hidden text-2xl text-brand-dark">
+                    <i class="fas fa-bars"></i>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Menu Dropdown -->
+        <div id="mobile-menu" class="hidden md:hidden bg-stone-50 border-t border-stone-200 absolute w-full">
+            <div class="flex flex-col px-6 py-4 space-y-4 text-center">
+                <a href="#about" class="block hover:text-brand-accent">About</a>
+                <a href="#services" class="block hover:text-brand-accent">Services</a>
+                <a href="#portfolio" class="block hover:text-brand-accent">Portfolio</a>
+                <a href="#reviews" class="block hover:text-brand-accent">Reviews</a>
+                <a href="#contact" class="block hover:text-brand-accent">Contact</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <header class="hero-bg h-screen flex items-center justify-center text-center px-6">
+        <div class="max-w-4xl text-white">
+            <h1 class="font-serif text-5xl md:text-7xl font-bold mb-6 leading-tight">
+                Abadikan Setiap Momen <br> bersama Aksara Studio
+            </h1>
+            <p class="text-lg md:text-xl font-light mb-10 text-stone-100">
+                Studio fotografi profesional di Jatinangor yang menghadirkan kenangan indah dan tak lekang oleh waktu untuk Anda dan orang-orang tercinta.
+            </p>
+            <div class="flex flex-col md:flex-row gap-4 justify-center">
+                <a href="#portfolio" class="px-8 py-3 bg-white text-brand-dark font-bold uppercase tracking-widest hover:bg-stone-200 transition duration-300">
+                    Lihat Portfolio
+                </a>
+                <a href="#contact" class="px-8 py-3 border border-white text-white font-bold uppercase tracking-widest hover:bg-white hover:text-brand-dark transition duration-300">
+                    Pesan Sesi Poto
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- About Section -->
+    <section id="about" class="py-24 md:py-32 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6">
+            
+            <div class="flex flex-col md:flex-row items-center gap-14 lg:gap-20">
+            
+            <!-- Image -->
+            <div class="w-full md:w-1/2 relative">
+                
+                <div class="overflow-hidden rounded-md shadow-lg">
+                <img 
+                    src="/assets/icon.jpg"
+                    alt="Photographer working"
+                    class="w-full h-[420px] md:h-[480px] object-cover transition duration-700 hover:scale-105"
+                >
+                </div>
+
+                <!-- Rating Badge -->
+                <div class="absolute -bottom-8 -right-8 bg-white/95 backdrop-blur-sm p-6 shadow-xl rounded-md max-w-xs hidden md:block border border-stone-100">
+                
+                <div class="flex items-center gap-1 mb-2 text-yellow-500 text-sm">
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star"></i>
+                    <i class="fas fa-star-half-alt"></i>
+                </div>
+
+                <p class="font-serif text-2xl font-semibold text-stone-900">
+                    4.7 <span class="text-sm font-sans font-normal text-stone-500">/ 5.0</span>
+                </p>
+
+                <p class="text-sm text-stone-500">
+                    Based on 116 reviews
+                </p>
+
+                </div>
+
+            </div>
+
+            <!-- Text Content -->
+            <div class="w-full md:w-1/2">
+
+                <h2 class="font-serif text-4xl md:text-5xl font-semibold text-stone-900 mb-8">
+                About Aksara Studio
+                </h2>
+
+                <p class="mb-6 leading-relaxed text-stone-600 text-lg">
+               Aksara Studio merupakan studio fotografi yang berbasis di Jatinangor, 
+            yang berdedikasi untuk mengabadikan setiap momen berharga dengan sentuhan elegan dan tak lekang oleh waktu. 
+            Setiap foto diciptakan dengan perhatian pada detail, pencahayaan alami, 
+            serta pengalaman sesi foto yang nyaman dan menyenangkan bagi setiap klien.
+                </p>
+
+                <p class="mb-10 leading-relaxed text-stone-600 text-lg">
+                Dipercaya oleh konsumen kami, Aksara Studio
+                berfokus pada mengabadikan berbagai momen penting dalam kehidupan —
+                mulai dari sesi prewedding, wisuda, potret keluarga, hingga fotografi produk.
+
+                Tujuan kami sederhana: menghadirkan setiap momen indah menjadi
+                sebuah karya fotografi yang dapat dikenang sepanjang waktu.
+                </p>
+
+                <!-- Divider -->
+                <div class="flex items-center gap-4">
+                <div class="h-px w-14 bg-stone-300"></div>
+                <span class="font-serif italic text-lg text-stone-700">
+                    Est. 2023
+                </span>
+                </div>
+
+            </div>
+
+            </div>
+
+        </div>
+    </section>
+
+    <!-- Services Section -->
+    <section id="services" class="py-24 md:py-32 bg-stone-50">
+        <div class="max-w-7xl mx-auto px-6">
+
+            <!-- Section Header -->
+            <div class="text-center mb-16 md:mb-20">
+            <h2 class="font-serif text-4xl md:text-5xl font-semibold text-stone-900 mb-4">
+                Our Services
+            </h2>
+            <p class="text-stone-600 max-w-2xl mx-auto mb-6">
+                Kami menyediakan berbagai layanan fotografi profesional yang dirancang
+                untuk mengabadikan momen berharga dengan sentuhan elegan dan penuh makna.
+            </p>
+            <div class="w-24 h-1 bg-brand-accent mx-auto"></div>
+            </div>
+
+           <!-- Services Grid -->
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+
+            <!-- 1. Prewedding -->
+            <div class="group relative overflow-hidden bg-stone-100 p-10 rounded-3xl text-center transition duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                
+                <i data-lucide="heart"
+                class="absolute -bottom-6 -right-6 w-32 h-32 text-brand-accent opacity-[0.05] translate-y-10 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-[0.12]"></i>
+
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-white text-brand-accent mb-6 shadow-sm">
+                <i data-lucide="heart" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-900 mb-3">Prewedding</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                Mengabadikan momen cinta sebelum hari pernikahan dengan konsep foto yang elegan dan berkesan.
+                </p>
+            </div>
+
+            <!-- 2. Wisuda -->
+            <div class="group relative overflow-hidden bg-stone-100 p-10 rounded-3xl text-center transition duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                
+                <i data-lucide="graduation-cap"
+                class="absolute -bottom-6 -right-6 w-32 h-32 text-brand-accent opacity-[0.05] translate-y-10 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-[0.12]"></i>
+
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-white text-brand-accent mb-6 shadow-sm">
+                <i data-lucide="graduation-cap" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-900 mb-3">Foto Wisuda</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                Rayakan pencapaian akademik Anda dengan foto wisuda yang elegan dan penuh kebanggaan.
+                </p>
+            </div>
+
+            <!-- 3. Foto Keluarga -->
+            <div class="group relative overflow-hidden bg-stone-100 p-10 rounded-3xl text-center transition duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                
+                <i data-lucide="users"
+                class="absolute -bottom-6 -right-6 w-32 h-32 text-brand-accent opacity-[0.05] translate-y-10 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-[0.12]"></i>
+
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-white text-brand-accent mb-6 shadow-sm">
+                <i data-lucide="users" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-900 mb-3">Foto Keluarga</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                Abadikan kebersamaan keluarga dalam foto yang hangat, natural, dan penuh cerita.
+                </p>
+            </div>
+
+            <!-- 4. Foto Studio -->
+            <div class="group relative overflow-hidden bg-stone-100 p-10 rounded-3xl text-center transition duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                
+                <i data-lucide="camera"
+                class="absolute -bottom-6 -right-6 w-32 h-32 text-brand-accent opacity-[0.05] translate-y-10 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-[0.12]"></i>
+
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-white text-brand-accent mb-6 shadow-sm">
+                <i data-lucide="camera" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-900 mb-3">Foto Studio</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                Sesi foto profesional di studio dengan pencahayaan dan konsep yang dirancang khusus.
+                </p>
+            </div>
+
+            <!-- 5. Foto Produk -->
+            <div class="group relative overflow-hidden bg-stone-100 p-10 rounded-3xl text-center transition duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                
+                <i data-lucide="package"
+                class="absolute -bottom-6 -right-6 w-32 h-32 text-brand-accent opacity-[0.05] translate-y-10 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-[0.12]"></i>
+
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-white text-brand-accent mb-6 shadow-sm">
+                <i data-lucide="package" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-900 mb-3">Foto Produk</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                Foto produk berkualitas tinggi untuk meningkatkan tampilan brand dan penjualan bisnis Anda.
+                </p>
+            </div>
+
+            <!-- 6. Foto Couple -->
+            <div class="group relative overflow-hidden bg-stone-100 p-10 rounded-3xl text-center transition duration-300 hover:bg-white hover:shadow-lg hover:-translate-y-1">
+                
+                <i data-lucide="sparkles"
+                class="absolute -bottom-6 -right-6 w-32 h-32 text-brand-accent opacity-[0.05] translate-y-10 transition-all duration-500 ease-out group-hover:translate-y-0 group-hover:opacity-[0.12]"></i>
+
+                <div class="relative w-14 h-14 mx-auto flex items-center justify-center rounded-xl bg-white text-brand-accent mb-6 shadow-sm">
+                <i data-lucide="sparkles" class="w-6 h-6"></i>
+                </div>
+
+                <h3 class="font-serif text-xl font-semibold text-stone-900 mb-3">Foto Couple</h3>
+                <p class="text-stone-600 text-sm leading-relaxed">
+                Mengabadikan momen romantis bersama pasangan dengan gaya foto yang natural dan estetik.
+                </p>
+            </div>
+
+            </div>
+        </div>
+    </section>
+
+    <!-- Portfolio Section -->
+    <section id="portfolio" class="py-20 bg-stone-50">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-12">
+                <h2 class="font-serif text-4xl font-bold text-brand-dark mb-4">Our Portfolio</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto mb-8"></div>
+                
+                <!-- Filters -->
+                <div class="flex flex-wrap justify-center gap-4">
+                    <button class="filter-btn active px-4 py-2 text-sm uppercase tracking-wider border border-stone-300 hover:border-brand-accent transition" data-filter="all">All</button>
+                    <button class="filter-btn px-4 py-2 text-sm uppercase tracking-wider border border-stone-300 hover:border-brand-accent transition" data-filter="wedding">Wedding</button>
+                    <button class="filter-btn px-4 py-2 text-sm uppercase tracking-wider border border-stone-300 hover:border-brand-accent transition" data-filter="portrait">Portrait</button>
+                    <button class="filter-btn px-4 py-2 text-sm uppercase tracking-wider border border-stone-300 hover:border-brand-accent transition" data-filter="graduation">Graduation</button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Item 1 -->
+                <div class="gallery-item group relative overflow-hidden cursor-pointer" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1519741497674-611481863552?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wedding" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <h3 class="text-white font-serif text-2xl">Wedding</h3>
+                    </div>
+                </div>
+                <!-- Item 2 -->
+                <div class="gallery-item group relative overflow-hidden cursor-pointer" data-category="portrait">
+                    <img src="https://images.unsplash.com/photo-1531746020798-e6953c6e8e04?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Portrait" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <h3 class="text-white font-serif text-2xl">Portrait</h3>
+                    </div>
+                </div>
+                <!-- Item 3 -->
+                <div class="gallery-item group relative overflow-hidden cursor-pointer" data-category="graduation">
+                    <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Graduation" class="w-full h-80 object-cover">
+                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                        <h3 class="text-white font-serif text-2xl">Graduation</h3>
+                    </div>
+                </div>
+                <!-- Item 4 -->
+                <div class="gallery-item group relative overflow-hidden cursor-pointer" data-category="wedding">
+                    <img src="https://images.unsplash.com/photo-1511285560982-1351cdeb9821?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Wedding" class="w-full h-80 object-cover">
+                                    <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <h3 class="text-white font-serif text-2xl">Wedding</h3>
+                </div>
+            </div>
+            <!-- Item 5 -->
+            <div class="gallery-item group relative overflow-hidden cursor-pointer" data-category="portrait">
+                <img src="https://images.unsplash.com/photo-1534528741775-53994a69daeb?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Portrait" class="w-full h-80 object-cover">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <h3 class="text-white font-serif text-2xl">Portrait</h3>
+                </div>
+            </div>
+            <!-- Item 6 -->
+            <div class="gallery-item group relative overflow-hidden cursor-pointer" data-category="graduation">
+                <img src="https://images.unsplash.com/photo-1523050854058-8df90110c9f1?ixlib=rb-1.2.1&auto=format&fit=crop&w=800&q=80" alt="Graduation" class="w-full h-80 object-cover">
+                <div class="absolute inset-0 bg-black/50 opacity-0 group-hover:opacity-100 transition duration-300 flex items-center justify-center">
+                    <h3 class="text-white font-serif text-2xl">Graduation</h3>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Reviews Section -->
+    <section id="reviews" class="py-20 bg-stone-100">
+        <div class="container mx-auto px-6">
+
+            <div class="text-center mb-16">
+            <h2 class="font-serif text-4xl font-bold text-brand-dark mb-4">Client Reviews</h2>
+            <div class="w-24 h-1 bg-brand-accent mx-auto mb-4"></div>
+
+            <div class="flex items-center justify-center gap-2">
+                <span class="text-2xl font-bold text-brand-dark">4.7</span>
+
+                <div class="flex text-yellow-500">
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star"></i>
+                <i class="fas fa-star-half-alt"></i>
+                </div>
+
+                <span class="text-stone-500">(116 Reviews)</span>
+            </div>
+            </div>
+
+            <!-- Swiper -->
+            <div class="swiper reviewSwiper">
+        <div class="swiper-wrapper">
+
+            <!-- Review 1 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Sukses selalu Aksara Studio ❤️ Yang setia menemani setiap momen saya mulai dari pelantikan, tunangan, prewed, pernikahan, foto keluarga, foto bestie sampai maternity. Hasilnya selalu bagus banget sampai teman-teman bilang saya seperti BA Aksara karena selalu merekomendasikan tempat foto ini. Timnya baik dan fotografernya sangat profesional."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">D</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">E2-12-Dhea Rohmawati</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 2 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Staffnya ramah banget, bahkan dijemput di depan dan dibantu membawakan barang. Saat sesi foto juga benar-benar diarahkan jadi tidak khawatir hasilnya jelek. Studionya keren dan make-upnya juga bagus!"
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">S</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Shanty Cintyawati</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 3 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Recommend banget buat yang mau foto prewedding. Studionya punya banyak konsep indoor dan outdoor, tempatnya luas dan bersih jadi nyaman banget. Make-upnya juga bagus dan semua crew sangat baik."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">A</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Amelia Hipitriyanti</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 4 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Studio fotonya nyaman banget, bersih, pencahayaan bagus dan staffnya ramah serta profesional. Fotografernya juga asik dan membantu mengarahkan pose jadi tidak kaku. Hasil foto keren dengan editing natural."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">J</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Junastio Andika Putra</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 5 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Mulai dari saya wisuda, adik wisuda, sepupu prewedding sampai WO tempat saya kerja juga foto di sini. Hasilnya selalu bagus dan cetakannya juga cepat."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">H</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Hilmi Rahadian Munawar</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 6 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Tempatnya memang agak masuk ke dalam, tapi hasil fotonya bagus dan harganya bersaing. Cocok untuk foto wisuda, keluarga, atau kebutuhan lainnya."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">F</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Fadil</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 7 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Terima kasih banyak Aksara Studio sudah membantu proses prewedding kami. Timnya profesional, tempatnya nyaman, make-upnya bagus, dan semuanya sangat ramah."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">O</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Octavia Ryandanip</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 8 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Tempatnya nyaman dan buat yang kaku difoto tidak perlu khawatir karena akan diarahkan oleh fotografernya. Pokoknya recommended."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">N</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Nuni Wahyuni</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 9 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Hasil fotonya bagus banget dan orang-orangnya ramah. Foto di sini jadi tidak kikuk karena pose juga diarahkan."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">D</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">Della Maldini</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            <!-- Review 10 -->
+            <div class="swiper-slide">
+            <div class="bg-white p-8 shadow-sm hover:shadow-md transition h-full">
+            <div class="flex text-yellow-500 mb-4">
+            <i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i><i class="fas fa-star"></i>
+            </div>
+            <p class="text-stone-600 italic mb-6">
+            "Hasil fotonya bagus dan fotografernya ramah. Mereka membantu mengarahkan gaya supaya hasilnya terlihat lebih bagus."
+            </p>
+            <div class="flex items-center gap-4">
+            <div class="w-10 h-10 bg-stone-200 rounded-full flex items-center justify-center font-bold text-brand-dark">D</div>
+            <div>
+            <h4 class="font-bold text-brand-dark">David</h4>
+            <p class="text-xs text-stone-500">Google Review</p>
+            </div>
+            </div>
+            </div>
+            </div>
+
+            </div>
+
+            <!-- Pagination -->
+            <div class="swiper-pagination mt-10"></div>
+            </div>
+
+        </div>
+    </section>
+
+    <script>
+    document.addEventListener("DOMContentLoaded", function () {
+
+    const swiper = new Swiper(".reviewSwiper", {
+        slidesPerView: 1,
+        spaceBetween: 30,
+        loop: true,
+
+        pagination: {
+        el: ".swiper-pagination",
+        clickable: true,
+        },
+
+        autoplay: {
+        delay: 4000,
+        },
+
+        breakpoints: {
+        768: {
+            slidesPerView: 2,
+        },
+        1024: {
+            slidesPerView: 3,
+        },
+        },
+
+    });
+
+    });
+    </script>
+
+    <!-- Location & Contact Section -->
+    <section id="contact" class="py-20 bg-white">
+        <div class="container mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-serif text-4xl font-bold text-brand-dark mb-4">Visit & Contact</h2>
+                <div class="w-24 h-1 bg-brand-accent mx-auto"></div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-2 gap-0 shadow-2xl rounded-lg overflow-hidden">
+                <!-- Map -->
+                <div class="h-96 lg:h-auto w-full">
+                    <iframe 
+                        src="https://www.google.com/maps?q=3Q5Q%2B39W%2C+Citanggulun%2C+Jatimukti%2C+Jatinangor%2C+Sumedang%2C+West+Java+45363%2C+Indonesia&output=embed" 
+                        width="100%" 
+                        height="100%" 
+                        style="border:0;" 
+                        allowfullscreen="" 
+                        loading="lazy"
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+
+                <!-- Contact Form -->
+                <div class="p-10 lg:p-16 bg-stone-50">
+                    <h3 class="font-serif text-2xl font-bold text-brand-dark mb-6">Book Your Session</h3>
+                    <form id="whatsappForm" class="space-y-6">
+                        <div>
+                            <label class="block text-sm font-bold text-brand-dark mb-2">Nama Lengkap</label>
+                            <input id="name" type="text" class="w-full px-4 py-3 border border-stone-300 rounded-sm focus:outline-none focus:border-brand-accent bg-white" placeholder="Nama Lengkap Kamu">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-brand-dark mb-2">Nomor Telpon</label>
+                            <input id="phone" type="tel" class="w-full px-4 py-3 border border-stone-300 rounded-sm focus:outline-none focus:border-brand-accent bg-white" placeholder="+62...">
+                        </div>
+
+                        <div>
+                            <label class="block text-sm font-bold text-brand-dark mb-2">Message</label>
+                            <textarea id="message" rows="4" class="w-full px-4 py-3 border border-stone-300 rounded-sm focus:outline-none focus:border-brand-accent bg-white" placeholder="Hallo admin Aksara Studio aku mau booking untuk wisuda bisa..?"></textarea>
+                        </div>
+
+                        <button type="submit" class="w-full bg-brand-dark text-white font-bold py-3 px-6 hover:bg-brand-accent transition duration-300">
+                            Kirim Pesan
+                        </button>
+                    </form>
+
+                    <div class="mt-10 pt-10 border-t border-stone-200">
+                        <h4 class="font-serif text-xl font-bold text-brand-dark mb-4">Contact Info</h4>
+                        <ul class="space-y-3 text-stone-600">
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-map-marker-alt text-brand-accent w-5"></i>
+                                <span>3Q5Q+39W, Citanggulun, Jatimukti, Jatinangor, Sumedang, West Java 45363</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-phone text-brand-accent w-5"></i>
+                                <span>+62 819-1692-4747</span>
+                            </li>
+                            <li class="flex items-center gap-3">
+                                <i class="fas fa-clock text-brand-accent w-5"></i>
+                                <span>Open Daily until 20:00</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <script>
+        document.getElementById("whatsappForm").addEventListener("submit", function(e){
+            e.preventDefault();
+
+            let name = document.getElementById("name").value;
+            let phone = document.getElementById("phone").value;
+            let message = document.getElementById("message").value;
+
+            let whatsappNumber = "6281916924747";
+
+            let text =
+            "Hallo Aksara Studio!\n\n" +
+            "Booking Sesi Foto\n\n" +
+            "Nama: " + name + "\n" +
+            "No HP: " + phone + "\n\n" +
+            "Pesan:\n" + message + "\n\n" +
+            "Saya tertarik untuk melakukan booking sesi foto di Aksara Studio.";
+
+            let url = "https://wa.me/" + whatsappNumber + "?text=" + encodeURIComponent(text);
+
+            window.open(url, "_blank");
+        });
+    </script>
+
+   <!-- Footer -->
+    <footer class="bg-[#1f1f1f] text-stone-400 pt-16 pb-10">
+    <div class="container mx-auto px-6">
+
+    <div class="grid grid-cols-1 md:grid-cols-3 gap-12 mb-12">
+
+    <!-- Brand -->
+    <div>
+    <h3 class="font-serif text-2xl font-bold text-white mb-4 tracking-wide">
+    AKSARA STUDIO
+    </h3>
+
+    <p class="text-sm leading-relaxed max-w-sm">
+    Mengabadikan setiap momen berharga dengan elegansi dan sentuhan artistik.
+    Dari pernikahan hingga potret keluarga, kami menghadirkan foto
+    yang mampu menceritakan kisah Anda secara indah dan berkesan.
+    </p>
+
+    <div class="mt-6 text-sm space-y-3">
+
+    <div class="flex items-center gap-2">
+    <i data-lucide="map-pin" class="w-4 h-4"></i>
+    <span>Jatinangor, Sumedang</span>
+    </div>
+
+    <div class="flex items-center gap-2">
+    <i data-lucide="phone" class="w-4 h-4"></i>
+    <span>+62 819-1692-4747</span>
+    </div>
+
+    </div>
+    </div>
+
+    <!-- Quick Links -->
+    <div>
+    <h4 class="text-white font-semibold mb-5 tracking-widest text-sm uppercase">
+    Explore
+    </h4>
+
+    <ul class="space-y-3 text-sm">
+    <li><a href="#about" class="hover:text-white transition">About Studio</a></li>
+    <li><a href="#services" class="hover:text-white transition">Services</a></li>
+    <li><a href="#portfolio" class="hover:text-white transition">Portfolio</a></li>
+    <li><a href="#reviews" class="hover:text-white transition">Reviews</a></li>
+    <li><a href="#contact" class="hover:text-white transition">Contact</a></li>
+    </ul>
+    </div>
+
+    <!-- Social -->
+    <div>
+    <h4 class="text-white font-semibold mb-5 tracking-widest text-sm uppercase">
+    Connect
+    </h4>
+
+    <p class="text-sm mb-6">
+    Follow our journey and latest photography works.
+    </p>
+
+    <div class="flex gap-4">
+
+    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-stone-800 hover:bg-brand-accent transition duration-300">
+    <i data-lucide="instagram" class="w-5 h-5"></i>
+    </a>
+
+    <a href="#" class="w-10 h-10 flex items-center justify-center rounded-full bg-stone-800 hover:bg-brand-accent transition duration-300">
+    <i data-lucide="facebook" class="w-5 h-5"></i>
+    </a>
+
+    <a href="https://wa.me/6281916924747" class="w-10 h-10 flex items-center justify-center rounded-full bg-stone-800 hover:bg-brand-accent transition duration-300">
+    <i data-lucide="message-circle" class="w-5 h-5"></i>
+    </a>
+
+    </div>
+
+    </div>
+
+    </div>
+
+    <!-- Bottom -->
+    <div class="border-t border-stone-800 pt-8 text-center text-sm text-stone-500">
+    <p>
+    © 2026 Aksara Studio — Dibuat dengan penuh dedikasi untuk mengabadikan momen berharga.
+    </p>
+    </div>
+
+    </div>
+    </footer>
+
+    <!-- Floating WhatsApp -->
+    <div class="fixed bottom-6 right-6 z-50 group flex items-center">
+
+        <!-- Text bubble -->
+        <span class="mr-3 bg-white text-stone-700 text-sm font-semibold px-4 py-2 rounded-full shadow-md opacity-0 translate-x-2 group-hover:opacity-100 group-hover:translate-x-0 transition duration-300">
+            Chat with Us
+        </span>
+
+        <!-- Button -->
+        <a href="https://wa.me/6281916924747"
+        target="_blank"
+        class="w-14 h-14 bg-green-500 text-white rounded-full flex items-center justify-center shadow-lg hover:bg-green-600 transition duration-300">
+
+            <i class="fab fa-whatsapp text-2xl"></i>
+
+        </a>
+
+    </div>
+
+    <!-- ICON -->
+    <script src="https://unpkg.com/lucide@latest"></script>
+    <script>
+    lucide.createIcons();
+    </script>
+
+    <!-- Scripts -->
+    <script>
+        // Mobile Menu Toggle
+        const btn = document.getElementById('mobile-menu-btn');
+        const menu = document.getElementById('mobile-menu');
+
+        btn.addEventListener('click', () => {
+            menu.classList.toggle('hidden');
+        });
+
+        // Portfolio Filter
+        const filterBtns = document.querySelectorAll('.filter-btn');
+        const galleryItems = document.querySelectorAll('.gallery-item');
+
+        filterBtns.forEach(btn => {
+            btn.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterBtns.forEach(b => b.classList.remove('active', 'border-brand-accent', 'text-brand-accent'));
+                filterBtns.forEach(b => b.classList.add('border-stone-300', 'text-stone-600'));
+                
+                // Add active class to clicked button
+                btn.classList.remove('border-stone-300', 'text-stone-600');
+                btn.classList.add('active', 'border-brand-accent', 'text-brand-accent');
+
+                const filterValue = btn.getAttribute('data-filter');
+
+                galleryItems.forEach(item => {
+                    if (filterValue === 'all' || item.getAttribute('data-category') === filterValue) {
+                        item.style.display = 'block';
+                    } else {
+                        item.style.display = 'none';
+                    }
+                });
+            });
+        });
+    </script>
+</body>
+</html>
